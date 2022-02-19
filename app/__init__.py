@@ -3,7 +3,8 @@ from .config import DefaultConfig
 from .extensions import db
 from .extensions import migrate
 from app.article.view import articles_bp
-from app.space.view import space_bp
+from app.space.view import space_bp,index_bp
+from app.admin.view import admin_bp
 
 
 def create_app(config=None, app_name=None, blueprints=None):
@@ -25,7 +26,7 @@ def create_app(config=None, app_name=None, blueprints=None):
     return app
 
 
-DEFAULT_BLUEPRINTS = [articles_bp, space_bp]
+DEFAULT_BLUEPRINTS = [articles_bp, space_bp, admin_bp, index_bp]
 
 
 def configure_app(app, config=None):
